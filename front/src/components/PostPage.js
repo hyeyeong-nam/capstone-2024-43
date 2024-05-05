@@ -35,7 +35,7 @@ function PostPage() {
         const currentDate = new Date();
 
         // 연도, 월, 일, 시간, 분, 초를 추출
-        const year = currentDate.getFullYear();
+        const year = currentDate.getFullYear() % 10;
         const month = String(currentDate.getMonth() + 1).padStart(2, '0');
         const day = String(currentDate.getDate()).padStart(2, '0');
         const hours = String(currentDate.getHours()).padStart(2, '0');
@@ -43,7 +43,7 @@ function PostPage() {
         const seconds = String(currentDate.getSeconds()).padStart(2, '0');
 
         // 연도, 월, 일, 시간, 분, 초를 조합하여 postId 생성
-        const postId = `${month}${day}${hours}${minutes}${seconds}`;
+        const postId = `${day}${hours}${minutes}${seconds}`;
         //postId 시간을 받아서 ->... 
         // 나갔다가 다시 들어오면 내용 없음.
 
